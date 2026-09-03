@@ -13,7 +13,7 @@ FROM nginx:alpine
 COPY nginx.conf /etc/nginx/templates/default.conf.template
 COPY --from=build /app/dist /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 80 443
 
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
   CMD wget --quiet --tries=1 --spider http://localhost/ || exit 1
