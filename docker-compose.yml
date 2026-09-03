@@ -6,4 +6,6 @@ services:
     container_name: react-spa-app
     restart: unless-stopped
     ports:
-      - "${APP_PORT:-4000}:80"
+      - "${APP_PORT:-80}:80"
+    environment:
+      - NGINX_HOST=${DOMAIN:-localhost}
