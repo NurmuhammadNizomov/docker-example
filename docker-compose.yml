@@ -1,0 +1,9 @@
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: react-spa-app
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-4000}:80"
